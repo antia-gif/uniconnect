@@ -1,0 +1,253 @@
+Mis disculpas por la omisión. Aquí tienes el código HTML completo, incluyendo todas las secciones: "Pisos", "Fiestas", "Erasmus", el formulario para añadir pisos y el formulario de registro. He asegurado que todas las secciones estén presentes y correctamente estructuradas.
+
+### Código HTML Completo
+
+```html
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniConnect - Compañeros, Pisos y Eventos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #4f46e5;
+            --secondary: #10b981;
+            --dark: #1e293b;
+            --light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark);
+            background-color: #f1f5f9;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .transition-all {
+            transition: all 0.3s ease;
+        }
+
+        .active-tab {
+            border-bottom: 3px solid var(--primary);
+            color: var(--primary);
+        }
+
+        header {
+            transition: top 0.3s;
+            height: 60px; /* Ajusta la altura del encabezado */
+        }
+
+        .logo {
+            height: 40px; /* Ajusta la altura del logo */
+            width: auto; /* Mantiene la proporción del logo */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9832951c-6e5b-4b1c-af8e-fed330adf0ca.png" alt="Logo UniConnect" class="logo">
+                <h1 class="text-lg font-bold text-indigo-600">UniConnect</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#pisos" class="font-medium hover:text-indigo-600 transition-all">Pisos</a>
+                <a href="#fiesta" class="font-medium hover:text-indigo-600 transition-all">Fiesta</a>
+                <a href="#erasmus" class="font-medium hover:text-indigo-600 transition-all">Erasmus</a>
+            </nav>
+            <div class="flex items-center space-x-4">
+                <button class="px-4 py-2 rounded-md bg-indigo-600 text-white hover:bg-indigo-700 transition-all">Iniciar sesión</button>
+                <button class="md:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white" style="margin-top: 60px;">
+        <div class="container mx-auto px-4 py-20 md:py-28">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Conecta con tu vida universitaria</h2>
+                <p class="text-xl mb-8">Encuentra pisos, compañeros, planes de fiesta y grupos Erasmus en tu ciudad</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button class="px-6 py-3 bg-white text-indigo-600 rounded-md font-medium hover:bg-gray-100 transition-all">Publicar anuncio</button>
+                    <button class="px-6 py-3 border-2 border-white text-white rounded-md font-medium hover:bg-white hover:text-indigo-600 transition-all">Explorar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Pisos Section -->
+        <section id="pisos" class="mb-20">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold">Pisos disponibles</h2>
+                <div class="flex space-x-2 border-b">
+                    <button class="px-4 py-2 font-medium active-tab">Todos</button>
+                    <button class="px-4 py-2 font-medium hover:text-indigo-600">Compartidos</button>
+                    <button class="px-4 py-2 font-medium hover:text-indigo-600">Estudios</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Piso Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition-all">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c84a4898-aa19-4249-bff1-e89ed1a30384.png" alt="Piso luminoso en el centro de Madrid con 3 habitaciones, sala de estar amplia y cocina moderna" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 right-4 bg-indigo-600 text-white px-3 py-1 rounded-full text-sm">Nuevo</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold">Piso compartido en Malasaña</h3>
+                            <span class="text-2xl font-bold text-indigo-600">€450</span>
+                        </div>
+                        <p class="text-gray-600 mt-2">Madrid · 3 habitaciones · 2 baños</p>
+                        <div class="flex items-center mt-4">
+                            <div class="flex -space-x-2">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/857cd17c-915b-4bf3-af1b-c13a6c64a7d4.png" alt="Foto de perfil de María, compañera de piso" class="w-8 h-8 rounded-full border-2 border-white">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/807d4469-8205-40e8-8288-7e6b02ed566a.png" alt="Foto de perfil de Carlos, compañero de piso" class="w-8 h-8 rounded-full border-2 border-white">
+                            </div>
+                            <span class="ml-2 text-sm text-gray-500">2 compañeros</span>
+                        </div>
+                        <button class="mt-4 w-full py-2 bg-indigo-100 text-indigo-600 rounded-md font-medium hover:bg-indigo-200 transition-all">Ver detalles</button>
+                    </div>
+                </div>
+
+                <!-- Piso Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition-all">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dcf3815f-81f1-43d9-8bca-44ec2b13e713.png" alt="Estudio moderno en Barcelona cerca de la universidad, con cocina americana y baño renovado" class="w-full h-48 object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold">Estudio cerca de UB</h3>
+                            <span class="text-2xl font-bold text-indigo-600">€650</span>
+                        </div>
+                        <p class="text-gray-600 mt-2">Barcelona · 1 habitación · 1 baño</p>
+                        <p class="mt-2 text-sm text-gray-500">A 5 min de la Universidad de Barcelona</p>
+                        <button class="mt-4 w-full py-2 bg-indigo-100 text-indigo-600 rounded-md font-medium hover:bg-indigo-200 transition-all">Ver detalles</button>
+                    </div>
+                </div>
+
+                <!-- Piso Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition-all">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/eeec98fd-7b78-48bf-8d6f-1427e90c2a5b.png" alt="Ático con terraza en Valencia con vistas al mar, ideal para estudiantes" class="w-full h-48 object-cover">
+                        <span class="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm">Popular</span>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold">Ático con terraza</h3>
+                            <span class="text-2xl font-bold text-indigo-600">€550</span>
+                        </div>
+                        <p class="text-gray-600 mt-2">Valencia · 2 habitaciones · 1 baño</p>
+                        <div class="mt-2 flex items-center text-yellow-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            <span class="ml-1 text-gray-600">4.8 (24 reviews)</span>
+                        </div>
+                        <button class="mt-4 w-full py-2 bg-indigo-100 text-indigo-600 rounded-md font-medium hover:bg-indigo-200 transition-all">Ver detalles</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center">
+                <button class="px-6 py-3 border-2 border-indigo-600 text-indigo-600 rounded-md font-medium hover:bg-indigo-50 transition-all">Ver más pisos</button>
+            </div>
+        </section>
+
+        <!-- Publicar Anuncio Section -->
+        <section class="bg-white rounded-xl shadow-md p-8 mb-20">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-center">Publica tu anuncio</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">¿Ofreces un piso?</h3>
+                        <p class="text-gray-600 mb-4">Comparte los detalles de tu piso y encuentra a los mejores compañeros.</p>
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ccb7349c-7b57-431b-8d89-3e88762860ea.png" alt="Ilustración de una casa con personas entrando, representando la búsqueda de compañeros de piso" class="rounded-lg">
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4">¿Buscas piso o compañeros?</h3>
+                        <p class="text-gray-600 mb-4">Describe lo que buscas y te ayudaremos a encontrar la mejor opción.</p>
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2">Tipo de anuncio</label>
+                                <select class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                    <option>Ofrezco piso</option>
+                                    <option>Busco piso</option>
+                                    <option>Busco compañeros</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Ciudad</label>
+                                <input type="text" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Ej: Madrid, Barcelona...">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Descripción</label>
+                                <textarea class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" rows="3" placeholder="Describe lo que ofreces o buscas..."></textarea>
+                            </div>
+                            <button type="submit" class="w-full py-3 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition-all">Publicar anuncio</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registro Section -->
+        <section class="bg-white rounded-xl shadow-md p-8 mb-20">
+            <div class="max-w-md mx-auto">
+                <h2 class="text-3xl font-bold mb-6 text-center">Registro</h2>
+                <form id="registrationForm" class="space-y-4">
+                    <div>
+                        <label class="block text-gray-700 mb-2">Nombre</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Tu nombre" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Correo electrónico</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Tu correo electrónico" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 mb-2">Contraseña</label>
+                        <input type="password" id="password" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Tu contraseña" required>
+                    </div>
+                    <button type="submit" class="w-full py-3 bg-indigo-600 text-white rounded-md font-medium hover:bg-indigo-700 transition-all">Registrarse</button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Fiesta Section -->
+        <section id="fiesta" class="mb-20">
+            <h2 class="text-3xl font-bold mb-8">Planes de fiesta esta noche</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Evento 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover transition-all">
+                    <div class="relative">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/aa598661-2bfc-4c96-88fe-5db6da51e7c1.png" alt="Discoteca moderna con luces de neón y gente bailando, ambiente universitario" class="w-full h-48 object-cover">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                            <span class="text-white font-bold">128 personas van</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold">Noche Erasmus</h3>
+                        <p class="text-gray-600 mt-2">Kapital · Madrid</p>
+                        <p class="mt-2 text-sm">Entrada gratis hasta las 1:00 con código UNICONNECT</p>
+                        <div class="mt-4 flex justify-between items-center">
+                            <button class="px-4 py-2 bg-indigo-600 text-white rounded-md text-sm font-medium hover:bg-indigo-700 transition-all">Voy</
